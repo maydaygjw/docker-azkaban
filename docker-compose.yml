@@ -19,7 +19,7 @@ webserver:
     image: puckel/azkaban-webserver
     restart: always
     ports:
-        - "8443:8443"
+        - "8443:4991"
     links:
         - executor:azkaban-executor
         - mariadb
