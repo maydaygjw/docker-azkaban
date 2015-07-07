@@ -10,16 +10,16 @@
 #        - MYSQL_ROOT_PASSWORD=wootwoot
 
 executor:
-    image: puckel/azkaban-executor
+    image: cc/azkaban-exec:1.0
     restart: always
-    links:
-        - mariadb
+    #links:
+        #- mariadb
 
 webserver:
-    image: puckel/azkaban-webserver
+    image: cc/azkaban-webserver:1.0
     restart: always
     ports:
         - "4991:8443"
     links:
         - executor:azkaban-executor
-        - mariadb
+       # - mariadb
